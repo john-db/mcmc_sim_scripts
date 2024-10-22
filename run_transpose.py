@@ -1,10 +1,10 @@
 import os
 
 def main():
-    in_folder = "/data/CDSLSahinalp/bridgersjd/salems_sims/RECOMB-oct_9_2024/simulated_input_data/"
+    in_folder = "/data/CDSLSahinalp/bridgersjd/salems_sims/RECOMB-oct_1_2024/"
 
     lines = None
-    with open("./sims_ls_oct9") as file:
+    with open("./sims_no_nas_Oct17") as file:
         lines = [line.rstrip() for line in file]
 
     for line in lines:
@@ -20,7 +20,7 @@ def main():
         input = in_folder + line + ".SC.after_noise"
         output = "./transposed_matrices/" + line + ".SC.after_noise.transposed.tsv"
 
-        cmd = "python ./transpose -i " + input + " -o " + output
+        cmd = "python ./transpose.py -i " + input + " -o " + output
         os.system(cmd)
         # print(cmd)
 
